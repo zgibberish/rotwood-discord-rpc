@@ -32,9 +32,9 @@ Player count can also be disabled
 idk i havent gotten to this part yet, Rotwood is still unfinished so it lacks a REST client feature so its not possible to send and receive http data for now, sorry about that.
 
 ## RPC Server Script
-This is required to communicate with Discord rich presence server because you can't do that with the game's built in functionalities. (Klei doesn't allow you to import libraries with mods for security reasons).
+This is required to communicate with Discord Rich Presence server because you can't do that with the game's built in functionalities. (Klei doesn't allow you to import libraries with mods for security reasons).
 
-The client (mod) will send game stats like current gamemode and biome name to the RPC server via http api requests (this is all done locally), then the server will use that data to interface with Discord's rich presence API.
+The client (mod) will send game stats like current gamemode and biome name to the RPC server via http api requests (this is all done locally), then the server will use that data to interface with Discord's Rich Presence API.
 
 ### Dependencies
 - python: duh
@@ -71,7 +71,7 @@ Since the game part is not finished yet, this all basically doesn't do anything.
 
 You can also request the same set of data from the server at the same address for whatever purpose you want.
 
-I plan to make it more easily customizable in the future, like adjusting what info goes where on the rich presence, for now you can go through `rpc-server.py` and make changes to your likings, There are some comments that explain how things work. If you know about modding Rotwood or Don't Starve (Together), you can tweak around to make it show other stats when the mod system comes out, the possibilities are quite endless.
+I plan to make it more easily customizable in the future, like adjusting what info goes where on the RPC status, for now you can go through `rpc-server.py` and make changes to your likings, There are some comments that explain how things work. If you know about modding Rotwood or Don't Starve (Together), you can tweak around to make it show other stats when the mod system comes out, the possibilities are quite endless.
 
 # Bugs
 
