@@ -82,7 +82,7 @@ The `requests` module too if you want to run the debug scripts:
 pip install requests
 ```
 
-# Usage
+### Usage
 
 Just run the server script:
 
