@@ -1,7 +1,7 @@
 -- usage:
 -- LoadScript("custom/rpc.lua")
 -- SendRPCData(GetRPCData())
-function SendRPCData(jsondata)
+function SendDiscordRPCData(jsondata)
     -- this doesnt work for now
     TheSim:QueryServer(
         "0.0.0.0:1974/api/rotwoodrpc",
@@ -11,7 +11,7 @@ function SendRPCData(jsondata)
     )
 end
 
-function GetRPCData()
+function GetDiscordRPCData()
     local payload = {}
     payload["ingame"] = InGamePlay()
     payload["localgame"] = TheNet:IsGameTypeLocal()
