@@ -29,7 +29,31 @@ Player count can also be disabled
 
 # Installation
 ## The Mod
-idk i havent gotten to this part yet, Rotwood is still unfinished so it lacks a REST client feature so its not possible to send and receive http data for now, sorry about that.
+You can run the `rpc.lua` game script in Rotwood but only half of it works, Rotwood still doesn't have a REST client and cannot send/receive http requests.
+### Using The Script
+To have Rotwood load a custom script:
+- First extract the `data_script.zip` file in the game directory.
+- There should be a new `scripts` folder.
+- You should now rename `data_script.zip` to something like `data_script.zip.backup` so you have something to restore back later when you dont want to run the game without any modifications.
+- Copy `scripts/` into `data/`.
+- Rotwood will now load the scripts inside `data/scripts/` instead.
+- To organize custom scripts, you should make a new direcotry in `data/scripts/`, e.g: `custom/`.
+- Copy `rpc.lua` into the custom scripts folder you just made.
+- Edit `data/scripts/main.lua` and find a line that says
+    ```lua
+    DEV_MODE = RELEASE_CHANNEL == "dev" or IS_QA_BUILD -- For now, QA gets debug tools everywhere.
+    ```
+    Change it to
+    ```lua
+    DEV_MODE = 1
+    ```
+- Start Rotwood, dev tools are now enabled, you can activate cheats and all that cool stuff.
+- Press Shift+\` to open the game console.
+- Enter the command `LoadScript("path")` where `path` is the path to that `rpc.lua` script file relative to data/scripts/, e.g: `custom/rpc.lua`.
+- If nothing happens after executing that command, it means the game loaded that script file and now you can call functions and variables within it.
+- Try running `GetRPCData()` in the console, if some json data is printed, it's working.
+
+That's about all you can do with it for now, I will definitely complete it when the networking feature arrives.
 
 ## RPC Server Script
 This is required to communicate with Discord Rich Presence server because you can't do that with the game's built in functionalities. (Klei doesn't allow you to import libraries with mods for security reasons).
