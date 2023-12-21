@@ -29,14 +29,13 @@ def updateRPC():
     # what goes where on the rich presence status.
     
     # if you decide to add additional data, you will
-    # have to write the appropriate logic for it
+    # have to write the appropriate logic for them
     # (in both game side and server side).
-    # and you should check a key before accessing its value
-    # as it prevents undefined exceptions. it is also good to
-    # have fallback values if the data format is not valid.
+    # and you should nil check them as always
+    # it is also good to have fallback values.
     if (Game["ingame"]):
-        # i dont need to worry about checking these keys before
-        # accessing them because its not meant to be missing
+        # i dont need to nil check these keys
+        # because its not meant to be missing
         # from the game stats dictionary by default.
         if (Game["localgame"]):
             p_state =  "Playing Local"
@@ -45,8 +44,8 @@ def updateRPC():
 
         p_details =  Game["biome"]
         
-        # these keys below have to be checked if they exist
-        # because i made them to be optional, which means
+        # these keys below have to be nil checked because
+        # i made them to be optional, which means
         # you can disable/hide them on your rich presence
         # by leaving them empty, zero or not provided at all.
         if ("room" in Game):
