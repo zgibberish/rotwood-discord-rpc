@@ -83,7 +83,7 @@ pip install requests
 pip install requests
 ```
 
-# Usage
+### Usage
 
 Just run the server script:
 
