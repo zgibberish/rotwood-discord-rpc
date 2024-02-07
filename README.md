@@ -80,6 +80,7 @@ The `requests` module too if you want to run the debug scripts:
 
 ```shell
 pip install requests
+pip install requests
 ```
 
 # Usage

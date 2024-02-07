@@ -68,10 +68,10 @@ def updateRPC():
     for i in range(2):
         try:
             RotwoodRPC.update(
-                large_image="a0bc32057bd11f82f0ed8c4f9f0388406a2ed2fa-512",
+                large_image="library_hero_512",
                 details=p_details,
                 state=p_state,
-                party_size=p_party_size,
+                party_size=p_party_siz
                 large_text=p_large_text
             )
         except Exception as exc:
