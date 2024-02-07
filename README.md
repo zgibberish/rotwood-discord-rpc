@@ -165,10 +165,10 @@ Show playing local singleplayer, in Nocturne Grove biome and frenzy level 0:
 
 ```json
 {
-    "ingame" : True,
- 	"localgame" : True,
-	"primarytext" : "Nocturne Grove [Fr.0]",
- 	"playercount" : 1
+    "ingame" : true,
+    "localgame" : true,
+    "primarytext" : "Nocturne Grove [Fr.0]",
+    "playercount" : 1
 }
 ```
 
