@@ -129,12 +129,12 @@ This is an example json request containing all keys (some are not even needed bu
 
 ```json
 {
-	"ingame" : true,
- 	"localgame" : false,
-	"largeimagetext" : "Rotwood Discord RPC Prototype (GH: zgibberish/rotwood-discord-rpc)",
-	"primarytext" : "Nocturne Grove [Fr.1]",
- 	"playercount" : 3,
-	"rpcclear" : false
+    "ingame" : true,
+    "localgame" : false,
+    "largeimagetext" : "Rotwood Discord RPC Prototype (GH: zgibberish/rotwood-discord-rpc)",
+    "primarytext" : "Nocturne Grove [Fr.1]",
+    "playercount" : 3,
+    "rpcclear" : false
 }
 ```
 
@@ -165,10 +165,10 @@ Show playing local singleplayer, in Nocturne Grove biome and frenzy level 0:
 
 ```json
 {
-    "ingame" : True,
- 	"localgame" : True,
-	"primarytext" : "Nocturne Grove [Fr.0]",
- 	"playercount" : 1
+    "ingame" : true,
+    "localgame" : true,
+    "primarytext" : "Nocturne Grove [Fr.0]",
+    "playercount" : 1
 }
 ```
 
@@ -184,8 +184,9 @@ Python example (requires the `requests` module):
 ```py
 import requests
 
+# Shows "In Menus"
 payload = {
-	"ingame" : True
+    "ingame" : False
 }
 
 r = requests.post("http://0.0.0.0:1974/api/rotwoodrpc", json=payload)
