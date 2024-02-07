@@ -1,33 +1,34 @@
 -- usage:
 -- LoadScript("custom/rpc.lua")
--- SendRPCData(GetRPCData())
-function SendDiscordRPCData(jsondata)
-    -- this doesnt work for now
-    TheSim:QueryServer(
-        "0.0.0.0:1974/api/rotwoodrpc",
-        nil,
-        "POST",
-        jsondata
-    )
-end
+-- this doesnt work for now
+-- TheSim:QueryServer("0.0.0.0:1974/api/rotwoodrpc", nil, "POST", GetRPCData())
 
 function GetDiscordRPCData()
     local payload = {}
     payload["ingame"] = InGamePlay()
     payload["localgame"] = TheNet:IsGameTypeLocal()
     payload["playercount"] = #AllPlayers
+
+    -- largeimagetext used for room name by default, you can change it if you want
     if (TheWorld) then
-        payload["room"] = TheWorld.prefab
+        payload["largeimagetext"] = TheWorld.prefab
     else
-        payload["room"] = ""
-    end
-    if (TheDungeon) then
-        payload["biome"] = TheDungeon:GetDungeonMap():GetBiomeLocation().pretty.name
-    else
-        payload["biome"] = ""
+        payload["largeimagetext"] = ""
     end
 
-    local payload_json = json.encode(payload)
+    -- primarytext used for biome name + frenzy level by default
+    if (TheDungeon) and (TheDungeon:GetDungeonMap()) and (TheDungeon:GetDungeonMap().data) and (TheDungeon:GetDungeonMap().data.location_id) then
+        local biome_name = TheDungeon:GetDungeonMap():GetBiomeLocation().pretty.name
+        local frenzy_level = TheDungeon.progression.components.ascensionmanager:GetSelectedAscension(TheDungeon:GetDungeonMap().data.location_id)
 
-    return payload_json
+        -- dont show frenzy level for Camp
+        if (biome_name == "Camp") then
+            payload["primarytext"] = biome_name.." [Fr."..frenzy_level.."]"
+        else
+            payload["primarytext"] = biome_name
+    else
+        payload["primarytext"] = ""
+    end
+
+    return json.encode(payload)
 end

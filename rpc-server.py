@@ -42,15 +42,15 @@ def updateRPC():
         else:
             p_state =  "Playing Online"
 
-        p_details =  Game["biome"]
+        p_details =  Game["primarytext"]
         
         # these keys below have to be nil checked because
         # i made them to be optional, which means
         # you can disable/hide them on your rich presence
         # by leaving them empty, zero or not provided at all.
-        if ("room" in Game):
-            if (Game["room"] != ""):
-                p_large_text = Game["room"]
+        if ("largeimagetext" in Game):
+            if (Game["largeimagetext"] != ""):
+                p_large_text = Game["largeimagetext"]
             else:
                 p_large_text = None
         if ("playercount" in Game):
