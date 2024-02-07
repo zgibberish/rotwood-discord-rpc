@@ -129,12 +129,12 @@ This is an example json request containing all keys (some are not even needed bu
 
 ```json
 {
-	"ingame" : true,
- 	"localgame" : false,
-	"largeimagetext" : "Rotwood Discord RPC Prototype (GH: zgibberish/rotwood-discord-rpc)",
-	"primarytext" : "Nocturne Grove [Fr.1]",
- 	"playercount" : 3,
-	"rpcclear" : false
+    "ingame" : true,
+    "localgame" : false,
+    "largeimagetext" : "Rotwood Discord RPC Prototype (GH: zgibberish/rotwood-discord-rpc)",
+    "primarytext" : "Nocturne Grove [Fr.1]",
+    "playercount" : 3,
+    "rpcclear" : false
 }
 ```
 
@@ -185,7 +185,7 @@ Python example (requires the `requests` module):
 import requests
 
 payload = {
-	"ingame" : True
+    "ingame" : True
 }
 
 r = requests.post("http://0.0.0.0:1974/api/rotwoodrpc", json=payload)
