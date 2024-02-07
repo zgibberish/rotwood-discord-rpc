@@ -184,8 +184,9 @@ Python example (requires the `requests` module):
 ```py
 import requests
 
+# Shows "In Menus"
 payload = {
-    "ingame" : True
+    "ingame" : False
 }
 
 r = requests.post("http://0.0.0.0:1974/api/rotwoodrpc", json=payload)
