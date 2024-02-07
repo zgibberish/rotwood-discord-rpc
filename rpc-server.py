@@ -71,7 +71,7 @@ def updateRPC():
                 large_image="library_hero_512",
                 details=p_details,
                 state=p_state,
-                party_size=p_party_siz
+                party_size=p_party_size,
                 large_text=p_large_text
             )
         except Exception as exc:
