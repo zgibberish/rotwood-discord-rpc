@@ -206,6 +206,15 @@ r = requests.get("http://0.0.0.0:1974/api/rotwoodrpc")
 pprint(r.json())
 ```
 
+### Changing The Server Port
+
+The default port that the RPC server listens to is `1974`, if you want to use a different port for both the server and the client:
+
+- For the server, change `rpc_server_port` in `rpc-server.py`
+- For the game script, change `rpc_server_port` in `rpc.lua`
+
+And use your new port instead of `1974` whenver you want to send requests to the server.
+
 # Future Development And Bugs
 
 I plan to make it more easily customizable in the future, like adjusting what info goes where on the RPC status, for now you can go through `rpc-server.py` and make changes to your likings, There are some comments that explain how things work. If you know about modding Rotwood or DS(T), you can tweak around to make it show other stats when the game gets modding support, the possibilities are quite endless.

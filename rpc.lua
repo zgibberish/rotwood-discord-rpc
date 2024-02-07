@@ -1,7 +1,8 @@
+local rpc_server_port = 1974
 -- usage:
 -- LoadScript("custom/rpc.lua")
 -- this doesnt work for now
--- TheSim:QueryServer("0.0.0.0:1974/api/rotwoodrpc", nil, "POST", GetRPCData())
+-- TheSim:QueryServer("0.0.0.0:rpc_server_port/api/rotwoodrpc", nil, "POST", GetRPCData())
 
 function GetDiscordRPCData()
     local payload = {}

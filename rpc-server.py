@@ -5,6 +5,7 @@ from flask import Flask, request, jsonify
 appID = "1185955546084429876"
 RotwoodRPC = pypresence.Presence(appID)
 Game = {} # dictionary that stores game stats sent by the game
+rpc_server_port = 1974
 app = Flask(__name__)
 
 def connectRPC():
@@ -142,6 +143,6 @@ if __name__ == "__main__":
 
     # web server starts from here
     from waitress import serve
-    serve(app, host="0.0.0.0", port=1974)
+    serve(app, host="0.0.0.0", port=rpc_server_port)
     # code down here wont be executed
     # until after the server stops (unstable)
