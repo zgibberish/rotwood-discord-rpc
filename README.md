@@ -1,3 +1,5 @@
+### (April 2024) Since the release of Early Access, I decided to discontinue this project since the game now features an official discord rich presence that has the same functionality, and some more. I will keep this repo up in case there's need of this in the future (maybe for modding).
+
 # Rotwood Discord RPC Mod
 A sort of proof-of-concept mod for [Rotwood](https://store.steampowered.com/app/2015270/Rotwood/) to show game stats live on your Discord profile (currently unfinished).
 
